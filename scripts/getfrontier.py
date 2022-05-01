@@ -5,6 +5,7 @@
 from copy import copy
 import rospy
 from nav_msgs.msg import OccupancyGrid
+import functions                            # functions.py index_of_point
 
 import numpy as np
 import cv2
@@ -61,9 +62,12 @@ def getfrontier(mapData):
 				pt=[np.array([xr,yr])]
 				if len(all_pts)>0:
 					all_pts=np.vstack([all_pts,pt])
-				else:
-							
+				else:		
 					all_pts=pt
+	
+	# [x_maze_exit, y_maze_exit] = index_of_point(mapData, [-2.5, 2])    # Calculated approximately based on custom Maze1
+	# maze_exit = [x_maze_exit, y_maze_exit] 
+	# all_pts = np.vstack([all_pts, maze_exit])
 	
 	return all_pts
 
