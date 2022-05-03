@@ -65,9 +65,9 @@ def getfrontier(mapData):
 				else:		
 					all_pts=pt
 	
-	# [x_maze_exit, y_maze_exit] = index_of_point(mapData, [-2.5, 2])    # Calculated approximately based on custom Maze1
-	# maze_exit = [x_maze_exit, y_maze_exit] 
-	# all_pts = np.vstack([all_pts, maze_exit])
+	[x_maze_exit, y_maze_exit] = index_of_point(mapData, [-2.5, 2])    # Calculated approximately based on custom Maze1
+	maze_exit = [x_maze_exit, y_maze_exit] 
+        all_pts = np.vstack([all_pts, maze_exit])
 	
 	return all_pts
 

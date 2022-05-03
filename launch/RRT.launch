@@ -27,6 +27,13 @@
   <param name="n_robots" value="1"/>
   <param name="rate" value="100"/>
   </node>
+
+  <node pkg="ros_autonomous_slam" type="marker.py" name="end_goal" output="screen">
+  <param name="map_topic" value="/map"/>
+  <param name="global_frame" value="/map"/>
+  <param name="rate" value="100"/>
+  <param name="namespace" value=""/>
+  </node>
   
   <node pkg="ros_autonomous_slam" type="assigner.py" name="assigner" output="screen">
   <param name="map_topic" value="/map"/>
@@ -40,6 +47,8 @@
   <param name="namespace" value=""/>
   <param name="delay_after_assignement" value="0.5"/>
   <param name="rate" value="100"/>
+  <param name="end_x" value="-3.0"/>
+  <param name="end_y" value="2.0"/>
   </node>
   
 </launch>
